@@ -2,7 +2,7 @@
  * @file 自定义hook组件
  * @author zhifou
  */
-import { useEffect, useLayoutEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 type Size = { width?: number; height?: number };
 
@@ -23,10 +23,10 @@ const useWindowSize = () => {
             clientWidth,
             clientHeight,
         } = (document as Document).documentElement;
-        return {
+        setState({
             width: clientWidth,
             height: clientHeight,
-        };
+        });
     }, []);
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const useWindowSize = () => {
         return () => {
             window.removeEventListener("resize", onResize, false);
         };
-    });
+    }, []);
 
     return state;
 };
