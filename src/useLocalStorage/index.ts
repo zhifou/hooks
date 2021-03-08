@@ -2,7 +2,7 @@
  * @file useLocalStorage
  * @author zhifou
  */
-import {useState} from 'react';
+import { useState } from "react";
 
 /**
  * 本地存储的Hook组件
@@ -10,8 +10,7 @@ import {useState} from 'react';
  * @param {T} initialValue 初始值
  * @param {number} timeout 过期时间（单位：毫秒）
  */
-function useLocalStorage<T>(key: string, initialValue: T, timeout: number) {
-
+function useLocalStorage<T>(key: string, initialValue: T, timeout?: number) {
     const remove = () => {
         try {
             (window as any).localStorage.removeItem(key);
@@ -47,7 +46,7 @@ function useLocalStorage<T>(key: string, initialValue: T, timeout: number) {
             const current = new Date().getTime() + (timeout || 0);
             const item = {
                 expired: current,
-                value: valueToStore
+                value: valueToStore,
             };
             (window as any).localStorage.setItem(key, JSON.stringify(item));
         } catch (error) {
