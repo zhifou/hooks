@@ -1,7 +1,7 @@
 {
   "name": "zhooks",
-  "version": "1.0.10",
-  "description": "",
+  "version": "1.0.12",
+  "description": "react hooks by zhifou",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -19,7 +19,9 @@
     "type": "git",
     "url": "git+https://zhifou@github.com/zhifou/hooks.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react", "hooks", "zhifou", "jest"
+  ],
   "author": "zhaoyadong",
   "license": "ISC",
   "bugs": {
